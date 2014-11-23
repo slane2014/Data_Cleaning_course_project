@@ -20,7 +20,7 @@ run_analysis <- function() {
     ## https://class.coursera.org/getdata-009/forum/thread?thread_id=58#comment-369
         
     ## Set the working directory
-    setwd("~/datasciencecoursera/Getting_and_Cleaning_Data/project")
+    setwd("~/datasciencecoursera/Getting_and_Cleaning_Data/course_project")
     
     ## Create a subdirectory for the data, if none exists
     if (!file.exists("./data")) {dir.create("./data")}
@@ -30,7 +30,7 @@ run_analysis <- function() {
     
     ## Download and time stamp the zip file, if it doesn't already exist
     if (!file.exists("./data/Dataset.zip")) {
-        download.file(fileURL, destfile="./data/Dataset.zip", method="curl", temp)
+        download.file(fileURL, destfile="./data/Dataset.zip", method="curl")
         dateDownloaded <- date()
         dateDownloaded
     }
@@ -169,7 +169,7 @@ run_analysis <- function() {
     ## Set column names to new data set
     colnames(aggr_mean) <- c("subject","activity", select_names[1:(size-2)])
     
-    ## The result of STEP 5 is a 180 x 81 data frame, called aggr_mean, with that contains
+    ## The result of STEP 5 is a 180 x 81 data frame, called aggr_mean, that contains
     ## a mean of each variable for each activity and subject.
 
 

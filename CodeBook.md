@@ -3,13 +3,148 @@
 This document is the CodeBook file for the Getting and Cleaning Data course project. It 
 contains details related to the raw data that is both read and written by run_analysis.R.
 
+### Data details and dictionary for the course project
+This section contains a list of the variables, the data, and any transformations or work 
+that was performed to clean up the data. See the README.md file for details of what the
+script does with the data at each step. run_analysis.R script creates a data frame that 
+follows the data design structure described [here](https://class.coursera.org/getdata-009/forum/thread?thread_id=58#comment-369).
+
+The script run_analysis.R was created read the raw data, conduct data analysis and transformation,
+and output the averaged data as required. 
+
+The script downloaded the online zip file located 
+at [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
+It read in only a subset of the raw data listed by name:         
+<ul><li>X_test: "UCI HAR Dataset/test/X_test.txt"</li>
+<li>y_test: "UCI HAR Dataset/test/y_test.txt"</li>
+<li>X_train: "UCI HAR Dataset/train/X_train.txt"</li>
+<li>y_train: "UCI HAR Dataset/train/y_train.txt"</li>
+<li>subject_test: "UCI HAR Dataset/test/subject_test.txt"</li>
+<li>subject_train: "UCI HAR Dataset/train/subject_train.txt"</li>
+<li>features: "UCI HAR Dataset/features.txt"</li>
+<li>activity_labels: "UCI HAR Dataset/activity_labels.txt"</li>
+</ul>
+No inertial signal data was read or used by this script.
+
+
+The output of the script is a text file of the average values by subject and activity. It is
+a 180 x 81 data frame that contains an average of each variable for each activity and subject. 
+
+The first column title of the resultant data frame is "subject" which contains a number from 1 to 30
+that corresponds to each specific subject in this study. The second column title is "activity"
+which contains an activity name from the list below:
+<ul><li>laying</li>
+<li>sitting</li>
+<li>standing</li>
+<li>walking</li>
+<li>walking_downstairs</li>
+<li>walking_upstairs</li>
+</ul>
+These activities have been converted from upper case to lower case to better match the case
+used in the variable strings.
+Each subject has data that corresponds to each of these activities. Since there are 30 subjects
+and 6 activities, there are exactly (6 * 30) 180 rows of data. 
+
+The remaining 79 columns correspond to the 79 data that are averaged for each subject/activity 
+pair. Those 79 variables are the subset of total 561 variables that contain mean and standard 
+deviation variables. For this project, we assume that all variables that contain the string
+"mean" are mean variables and variables that contain the string "std" are standard
+deviation variables. The 79 variables included in the final text data file are, in order:
+<ul><li>timeBodyAcc-mean-X</li>
+<li>timeBodyAcc-mean-Y </li>
+<li>timeBodyAcc-mean-Z </li>
+<li>timeBodyAcc-std-X </li>
+<li>timeBodyAcc-std-Y </li>
+<li>timeBodyAcc-std-Z </li>
+<li>timeGravityAcc-mean-X </li>
+<li>timeGravityAcc-mean-Y </li>
+<li>timeGravityAcc-mean-Z </li>
+<li>timeGravityAcc-std-X </li>
+<li>timeGravityAcc-std-Y </li>
+<li>timeGravityAcc-std-Z </li>
+<li>timeBodyAccJerk-mean-X </li>
+<li>timeBodyAccJerk-mean-Y </li>
+<li>timeBodyAccJerk-mean-Z </li>
+<li>timeBodyAccJerk-std-X </li>
+<li>timeBodyAccJerk-std-Y </li>
+<li>timeBodyAccJerk-std-Z </li>
+<li>timeBodyGyro-mean-X </li>
+<li>timeBodyGyro-mean-Y </li>
+<li>timeBodyGyro-mean-Z </li>
+<li>timeBodyGyro-std-X </li>
+<li>timeBodyGyro-std-Y </li>
+<li>timeBodyGyro-std-Z </li>
+<li>timeBodyGyroJerk-mean-X </li>
+<li>timeBodyGyroJerk-mean-Y </li>
+<li>timeBodyGyroJerk-mean-Z </li>
+<li>timeBodyGyroJerk-std-X </li>
+<li>timeBodyGyroJerk-std-Y </li>
+<li>timeBodyGyroJerk-std-Z </li>
+<li>timeBodyAccMag-mean </li>
+<li>timeBodyAccMag-std </li>
+<li>timeGravityAccMag-mean </li>
+<li>timeGravityAccMag-std </li>
+<li>timeBodyAccJerkMag-mean </li>
+<li>timeBodyAccJerkMag-std </li>
+<li>timeBodyGyroMag-mean </li>
+<li>timeBodyGyroMag-std </li>
+<li>timeBodyGyroJerkMag-mean </li>
+<li>timeBodyGyroJerkMag-std </li>
+<li>frequencyBodyAcc-mean-X </li>
+<li>frequencyBodyAcc-mean-Y </li>
+<li>frequencyBodyAcc-mean-Z </li>
+<li>frequencyBodyAcc-std-X </li>
+<li>frequencyBodyAcc-std-Y </li>
+<li>frequencyBodyAcc-std-Z </li>
+<li>frequencyBodyAcc-meanfreq-X </li>
+<li>frequencyBodyAcc-meanfreq-Y </li>
+<li>frequencyBodyAcc-meanfreq-Z </li>
+<li>frequencyBodyAccJerk-mean-X </li>
+<li>frequencyBodyAccJerk-mean-Y </li>
+<li>frequencyBodyAccJerk-mean-Z </li>
+<li>frequencyBodyAccJerk-std-X </li>
+<li>frequencyBodyAccJerk-std-Y </li>
+<li>frequencyBodyAccJerk-std-Z </li>
+<li>frequencyBodyAccJerk-meanFreq-X </li>
+<li>frequencyBodyAccJerk-meanFreq-Y </li>
+<li>frequencyBodyAccJerk-meanFreq-Z </li>
+<li>frequencyBodyGyro-mean-X </li>
+<li>frequencyBodyGyro-mean-Y </li>
+<li>frequencyBodyGyro-mean-Z </li>
+<li>frequencyBodyGyro-std-X </li>
+<li>frequencyBodyGyro-std-Y </li>
+<li>frequencyBodyGyro-std-Z </li>
+<li>frequencyBodyGyro-meanFreq-X </li>
+<li>frequencyBodyGyro-meanFreq-Y </li>
+<li>frequencyBodyGyro-meanFreq-Z </li>
+<li>frequencyBodyAccMag-mean </li>
+<li>frequencyBodyAccMag-std </li>
+<li>frequencyBodyAccMag-meanFreq</li>
+<li>frequencyBodyAccJerkMag-mean </li>
+<li>frequencyBodyAccJerkMag-std </li>
+<li>frequencyBodyAccJerkMag-meanFreq </li>
+<li>frequencyBodyGyroMag-mean </li>
+<li>frequencyBodyGyroMag-std </li>
+<li>frequencyBodyGyroMag-meanFreq </li>
+<li>frequencyBodyGyroJerkMag-mean </li>
+<li>frequencyBodyGyroJerkMag-std </li>
+<li>frequencyBodyGyroJerkMag-meanFreq</li>
+</ul>
+
+Each of these values in the output text file contain the averages of the raw values associated 
+with each subject and activity pair. The raw values and averaged values are normalized values 
+in the range [-1, 1]. These variable names are slightly different from their raw values in that 
+they have been cleaned for better readability. Specifically, all occurrences of parenthesis and commas have been removed. 
+Variables that begin with "t" or "f" have been replaced with "time" and "frequency", respectively.
+
+
 ### Human Activity Recognition Using Smartphones Dataset - Version 1.0
 
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
 DITEN - Universit‡ degli Studi di Genova.
 Via Opera Pia 11A, I-16145, Genoa, Italy.
-activityrecognition@smartlab.ws - http:// www.smartlab.ws
+activityrecognition@smartlab.ws - http://www.smartlab.ws
 
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket 
