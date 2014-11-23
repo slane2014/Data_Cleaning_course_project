@@ -133,10 +133,10 @@ run_analysis <- function() {
     ## Remove the double word "BodyBody" and replace with one "Body" 
     names(aggr) <- gsub("BodyBody", "Body", names(aggr),)
     
-    ## Replace the 't' or 'f' prefix with "time" or "force", respectively 
+    ## Replace the 't' or 'f' prefix with "time" or "frequency", respectively 
     names(aggr) <- gsub("tG", "timeG", names(aggr))    
     names(aggr) <- gsub("tB", "timeB", names(aggr))
-    names(aggr) <- gsub("fB", "forceB", names(aggr))
+    names(aggr) <- gsub("fB", "frequencyB", names(aggr))
     
     # Save the column names of the reduced data set for later use
     select_names <- names(aggr)
