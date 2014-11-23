@@ -74,15 +74,15 @@ run_analysis.R script creates a data frame, called aggr, that follows the data d
 structure described [here](https://class.coursera.org/getdata-009/forum/thread?thread_id=58#comment-369).
         
 The following raw files are read into the following data frames, listed by name:         
-* X_test: "UCI HAR Dataset/test/X_test.txt"
-* y_test: "UCI HAR Dataset/test/y_test.txt"
-* X_train: "UCI HAR Dataset/train/X_train.txt"
-* y_train: "UCI HAR Dataset/train/y_train.txt"
-* subject_test: "UCI HAR Dataset/test/subject_test.txt"
-* subject_train: "UCI HAR Dataset/train/subject_train.txt"
-* features: "UCI HAR Dataset/features.txt"
-* activity_labels: "UCI HAR Dataset/activity_labels.txt"
-  
+<ul><li>X_test: "UCI HAR Dataset/test/X_test.txt"</li>
+<li>y_test: "UCI HAR Dataset/test/y_test.txt"</li>
+<li>X_train: "UCI HAR Dataset/train/X_train.txt"</li>
+<li>y_train: "UCI HAR Dataset/train/y_train.txt"</li>
+<li>subject_test: "UCI HAR Dataset/test/subject_test.txt"</li>
+<li>subject_train: "UCI HAR Dataset/train/subject_train.txt"</li>
+<li>features: "UCI HAR Dataset/features.txt"</li>
+<li>activity_labels: "UCI HAR Dataset/activity_labels.txt"</li>
+</ul>
 
 The following steps describe the five sections within run_analysis.R that correspond to the
 five requirements of this programming assignment.
@@ -127,7 +127,7 @@ Next, we next replace the comma in the ",gravity..." string with a dash "-gravit
 comma is used to describe the rance in some of the variables, such 
 as fBodyAcc-bandsEnergy()-1,8. Next, the string "BodyBody" appears in some variable names, 
 so we change these occurrences to "Body". Finally, for variables that start with a "f" or
-"t", we replace these strings with "force" and "time", respectively. The result of STEP 4 
+"t", we replace these strings with "frequency" and "time", respectively. The result of STEP 4 
 is a 10299 x 81 data frame, called aggr, with cleaned and descriptive variable names.     
     
 ##### STEP 5
