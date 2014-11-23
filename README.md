@@ -1,4 +1,4 @@
-## README.md for the Getting and Cleaning Data course project
+## README file for the Getting and Cleaning Data course project
 
 This document is the README file for the Getting and Cleaning Data course project. It 
 contains:
@@ -21,9 +21,11 @@ You should also include a README.md in the repo
 with your scripts. This repo explains how all of the scripts work and how they are 
 connected. 
 
+
 One of the most exciting areas in all of data science right now is wearable 
 computing - see for example
 http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/. 
+
 
 Companies like Fitbit, Nike, and Jawbone Up 
 are racing to develop the most advanced algorithms to attract new users. The data linked 
@@ -52,10 +54,10 @@ This R script, called run_analysis.R, does the following:
 
 This GitHub repository is located at [https://github.com/slane2014/Data_Cleaning_course_project](https://github.com/slane2014/Data_Cleaning_course_project).
 It contains three documents:
-<ol><li>This README file, README.md</li>
-<li>A code book that describes the data that was used and created in this assignment, CodeBook.md</li>
+<ol><li>This README file, README.md.</li>
+<li>A code book that describes the data that was used and created in this assignment, CodeBook.md.</li>
 <li>The script that takes the raw data and performs the five steps described in
-the Problem Statement section, run_analysis.R </li>
+the Problem Statement section, run_analysis.R. </li>
 </ol>
 
 ### Description of solution as programming in run_analysis.R
@@ -81,6 +83,10 @@ The following raw files are read into the following data frames, listed by name:
 * features: "UCI HAR Dataset/features.txt"
 * activity_labels: "UCI HAR Dataset/activity_labels.txt"
   
+
+The following steps describe the five sections within run_analysis.R that correspond to the
+five requirements of this programming assignment.
+
 ##### STEP 1
 Step 1 merges the training and the test sets to create one data set. It aggregates all 
 training and test data together into a data.frame, called aggr. The step also binds all 
@@ -142,3 +148,4 @@ a mean of each variable for each activity and subject.
 
 Finally, the script needs to output aggr_mean data frame to a text file. It creates a 
 text file called "aggr_mean.txt" in the folder where the run_analysis.R file is located.
+
