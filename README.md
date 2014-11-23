@@ -1,5 +1,11 @@
 ## README.md for the Getting and Cleaning Data course project
 
+This document is the README file for the Getting and Cleaning Data course project. It 
+contains:
+<ol><li>Details of the course project problem statement</li>
+<li>A description of the documents included in the GitHub folder</li>
+<li>A detailed description of what the run_analysis.R script is doing</li>
+</li>
 
 ### Problem Statement
 
@@ -21,7 +27,6 @@ to from the course website represent data collected from the accelerometers from
 Samsung Galaxy S smartphone. A full description is available at the site where the data 
 was obtained: 
 
-
 [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
 
 Here are the data for the project: 
@@ -36,55 +41,42 @@ This R script, called run_analysis.R, does the following:
 <li>From the data set in step 4, creates a second, independent tidy data set with the 
    average of each variable for each activity and each subject.</li>
 </ol>
+
 ### Documents included
 
-
+This GitHub repository is located at [https://github.com/slane2014/Data_Cleaning_course_project](https://github.com/slane2014/Data_Cleaning_course_project).
+It contains three documents:
+<ol><li>This README file, README.md</li>
+<li>A code book that describes the data that was used and created in this assignment, CodeBook.md</li>
+<li>The run_analysis.R script that takes the raw data and performs the five steps described in
+the Problem Statement section</li>
+</li>
 
 ### Description of solution as programming in run_analysis.R
 
-This R script, called run_analysis.R, does the following:
-1.) Merges the training and the test sets to create one data set.
-2.) Extracts only the measurements on the mean and standard deviation for each 
-      measurement. 
-3.) Uses descriptive activity names to name the activities in the data set.
-4.) Appropriately labels the data set with descriptive variable names. 
-5.) From the data set in step 4, creates a second, independent tidy data set with the 
-   average of each variable for each activity and each subject.
-    
-This R script performs these steps in the order described above.
+This R script, run_analysis.R, performs the five steps described in the Problem Statement
+section in the listed order. I have described the details in each of these five steps 
+below.
 
 Before the first step can be performed, the working directory is set, the data is 
-downloaded from the data resposity, the data is unzipped in place, and the data
+downloaded from the online data resposity, the data is unzipped in place, and the data
 files are read into memory for the R program to use.
 
-This R script creates a data frame, called aggr, that follows the data design
-structure described here: 
- https://class.coursera.org/getdata-009/forum/thread?thread_id=58#comment-369
+run_analysis.R script creates a data frame, called aggr, that follows the data design
+structure described [here](https://class.coursera.org/getdata-009/forum/thread?thread_id=58#comment-369).
         
-Set the working directory
-
- Create a subdirectory for the data, if none exists
-
-Assign the URL to the location of the data 
- 
-Download and time stamp the zip file, if it doesn't already exist
- Unzip the package in place
-Read raw data files into memory
-    X_test <- read.table("data/UCI HAR Dataset/test/X_test.txt")
-    y_test <- read.table("data/UCI HAR Dataset/test/y_test.txt")
-
-    X_train <- read.table("data/UCI HAR Dataset/train/X_train.txt")
-    y_train <- read.table("data/UCI HAR Dataset/train/y_train.txt")
-    
-    subject_test <- read.table("data/UCI HAR Dataset/test/subject_test.txt")
-    subject_train <- read.table("data/UCI HAR Dataset/train/subject_train.txt")
-    features <- read.table("data/UCI HAR Dataset/features.txt", stringsAsFactors = FALSE)
-    activity_labels <- read.table("data/UCI HAR Dataset/activity_labels.txt", stringsAsFactors = FALSE)
+The following raw files are read into the following data frames:         
+* X_test: "data/UCI HAR Dataset/test/X_test.txt"
+* y_test: "data/UCI HAR Dataset/test/y_test.txt"
+* X_train: "data/UCI HAR Dataset/train/X_train.txt"
+* y_train: "data/UCI HAR Dataset/train/y_train.txt"
+* subject_test: "data/UCI HAR Dataset/test/subject_test.txt"
+* subject_train: "data/UCI HAR Dataset/train/subject_train.txt"
+* features: "data/UCI HAR Dataset/features.txt"
+* activity_labels: "data/UCI HAR Dataset/activity_labels.txt"
   
-  
- =================================================================================
- STEP 1
-1.) Merge the training and the test sets to create one data set.
+#### STEP 1
+Merge the training and the test sets to create one data set.
     
     ## Aggregate all training and test data together into a data.frame.
     ## Bind all of the train and test rows together using several rbind commands
