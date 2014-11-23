@@ -39,31 +39,34 @@ body acceleration.
 *An identifier of the subject who carried out the experiment.
 
 The downloaded dataset includes the following files:
-*'README.txt'
-*'features_info.txt': Shows information about the variables used on the feature vector.
-*'features.txt': List of all features.
-*'activity_labels.txt': Links the class labels with their activity name.
-*'train/X_train.txt': Training set.
-*'train/y_train.txt': Training labels.
-*'test/X_test.txt': Test set.
-*'test/y_test.txt': Test labels.
+<ul><li>'README.txt'</li>
+<li>'features_info.txt': Shows information about the variables used on the feature vector.</li>
+<li>'features.txt': List of all features.</li>
+<li>'activity_labels.txt': Links the class labels with their activity name.</li>
+<li>'train/X_train.txt': Training set.</li>
+<li>'train/y_train.txt': Training labels.</li>
+<li>'test/X_test.txt': Test set.</li>
+<li>'test/y_test.txt': Test labels.</li>
+</ul>
 
 The following files are available for the train and test data. Their descriptions are 
 equivalent:
-*'train/subject_train.txt': Each row identifies the subject who performed the activity 
-for each window sample. Its range is from 1 to 30. 
-*'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the 
+<ul><li>'train/subject_train.txt': Each row identifies the subject who performed the activity 
+for each window sample. Its range is from 1 to 30. </li>
+<li>'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the 
 smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 
 element vector. The same description applies for the 'total_acc_x_train.txt' and 
-'total_acc_z_train.txt' files for the Y and Z axis. 
-*'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by 
-subtracting the gravity from the total acceleration. 
-*'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by 
-the gyroscope for each window sample. The units are radians/second. 
+'total_acc_z_train.txt' files for the Y and Z axis. </li>
+<li>'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by 
+subtracting the gravity from the total acceleration. </li>
+<li>'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by 
+the gyroscope for each window sample. The units are radians/second. </li>
+</ul>
 
 ### Notes
-*Features are normalized and bounded within [-1,1].
-*Each feature vector is a row on the text file.
+<ul><li>Features are normalized and bounded within [-1,1].</li>
+<li>Each feature vector is a row on the text file.</li>
+</ul>
 
 For more information about this dataset contact: activityrecognition@smartlab.ws
 
@@ -126,30 +129,32 @@ These signals were used to estimate variables of the feature vector for each pat
 </ul>
 
 The set of variables that were estimated from these signals are: 
-*mean(): Mean value
-*std(): Standard deviation
-*mad(): Median absolute deviation 
-*max(): Largest value in array
-*min(): Smallest value in array
-*sma(): Signal magnitude area
-*energy(): Energy measure. Sum of the squares divided by the number of values. 
-*iqr(): Interquartile range 
-*entropy(): Signal entropy
-*arCoeff(): Autorregresion coefficients with Burg order equal to 4
-*correlation(): correlation coefficient between two signals
-*maxInds(): index of the frequency component with largest magnitude
-*meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-*skewness(): skewness of the frequency domain signal 
-*kurtosis(): kurtosis of the frequency domain signal 
-*bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-*angle(): Angle between to vectors.
+<ul><li>mean(): Mean value</li>
+<li>std(): Standard deviation</li>
+<li>mad(): Median absolute deviation </li>
+<li>max(): Largest value in array</li>
+<li>min(): Smallest value in array</li>
+<li>sma(): Signal magnitude area</li>
+<li>energy(): Energy measure. Sum of the squares divided by the number of values.</li> 
+<li>iqr(): Interquartile range </li>
+<li>entropy(): Signal entropy</li>
+<li>arCoeff(): Autorregresion coefficients with Burg order equal to 4</li>
+<li>correlation(): correlation coefficient between two signals</li>
+<li>maxInds(): index of the frequency component with largest magnitude</li>
+<li>eanFreq(): Weighted average of the frequency components to obtain a mean frequency</li>
+<li>skewness(): skewness of the frequency domain signal </li>
+<li>kurtosis(): kurtosis of the frequency domain signal </li>
+<li>bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.</li>
+<li>angle(): Angle between to vectors.</li>
+</ul>
 
 Additional vectors obtained by averaging the signals in a signal window sample. 
 These are used on the angle() variable:
-*gravityMean
-*tBodyAccMean
-*tBodyAccJerkMean
-*tBodyGyroMean
-*tBodyGyroJerkMean
+<ul><li>gravityMean</li>
+<li>tBodyAccMean</li>
+<li>tBodyAccJerkMean</li>
+<li>tBodyGyroMean</li>
+<li>tBodyGyroJerkMean</li>
+</ul>
 
 The complete list of variables of each feature vector is available in 'features.txt'.
