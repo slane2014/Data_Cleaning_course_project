@@ -1,9 +1,5 @@
 run_analysis <- function() {
-    ## This function does two primary things:
-    ## 1.) It merges the training and test sets to create one data set, and 
-    ## 2.) Extracts only the measurements on the mean and standard deviation
-    ##      for each Measurement.
-    
+
     ## This R script, called run_analysis.R, does the following:
     ## 1.) Merges the training and the test sets to create one data set.
     ## 2.) Extracts only the measurements on the mean and standard deviation for each 
@@ -15,7 +11,7 @@ run_analysis <- function() {
     
     ## This R script performs these steps in the order described above.
 
-    ## Before the frist step can be performed, the working directory is set, the data is 
+    ## Before the first step can be performed, the working directory is set, the data is 
     ## downloaded from the data resposity, the data is unzipped in place, and the data
     ## files are read into memory for the R program to use.
 
