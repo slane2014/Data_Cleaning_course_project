@@ -149,3 +149,4 @@ a mean of each variable for each activity and subject.
 Finally, the script needs to output aggr_mean data frame to a text file. It creates a 
 text file called "aggr_mean.txt" in the folder where the run_analysis.R file is located.
 
+
