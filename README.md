@@ -23,10 +23,10 @@ connected.
 
 
 One of the most exciting areas in all of data science right now is wearable 
-computing - see for example
+computing - see for example<br>
 http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/. 
 
-<br>
+<br><br>
 Companies like Fitbit, Nike, and Jawbone Up 
 are racing to develop the most advanced algorithms to attract new users. The data linked 
 to from the course website represent data collected from the accelerometers from the 
@@ -35,12 +35,12 @@ was obtained:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-
+<br><br>
 Here are the data for the project: 
-
+<br>
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
  
- 
+<br><br>
 This R script, called run_analysis.R, does the following:
 <ol><li>Merges the training and the test sets to create one data set.</li>
 <li>Extracts only the measurements on the mean and standard deviation for each measurement. </li>
